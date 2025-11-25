@@ -1,6 +1,13 @@
 const loginBtn = document.getElementById("loginBtn");
 const signUpBtn = document.getElementById("signUpBtn");
 
+// 영대소문자, 숫자, 특수문자 포함 8자 이상
+// 공백 들어가면 안됨
+// 아이디에 한글이 포함되지 않아야 함
+const pwAuth = /^[\w!@#$%^&*()]{8,}$/;
+const hasKorean = /[ㄱ-ㅎ가-힣]/;
+const emailAuth = /^\S+@\S+\.\S+$/;
+
 // 로그인 버튼 클릭 이벤트
 loginBtn.addEventListener("click", () => {
     const id = document.getElementById("userId").value;
@@ -8,11 +15,6 @@ loginBtn.addEventListener("click", () => {
 
     console.log(id);
     console.log(pw);
-
-    // 영대소문자, 숫자, 특수문자 포함 8자 이상
-    // 아이디에 한글이 포함되지 않아야 함
-    const pwAuth = /^[\w!@#$%^&*()]{8,}[^\s]$/;
-    const hasKorean = /[ㄱ-ㅎ가-힣]/;
 
     const idTest = hasKorean.test(id); // id 형식 검사
 
