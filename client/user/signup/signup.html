@@ -10,7 +10,6 @@
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
             crossorigin="anonymous"
         />
-        <link rel="stylesheet" href="./login.css" />
     </head>
     <body>
         <header>
@@ -18,7 +17,7 @@
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
                         <img
-                            src="./twitter.png"
+                            src="../../twitter.png"
                             alt=""
                             style="width: 50px; height: 50px"
                         />
@@ -28,14 +27,14 @@
             </nav>
         </header>
         <hr />
-        <div class="container mt-5" style="margin-top: 9rem !important">
+        <div class="container mt-5" style="margin-top: 6rem !important">
             <div class="row justify-content-center">
                 <div class="col-10 col-md-6 col-lg-4">
-                    <h2>Login</h2>
+                    <h2>Sign Up</h2>
                     <br />
                     <form>
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label"
+                            <label for="userId" class="form-label"
                                 >아이디</label
                             >
                             <input
@@ -46,9 +45,7 @@
                             />
                         </div>
                         <div class="mb-3">
-                            <label
-                                for="exampleInputPassword1"
-                                class="form-label"
+                            <label for="password" class="form-label"
                                 >비밀번호</label
                             >
                             <input
@@ -59,12 +56,35 @@
                                 placeholder="영대소문자, 숫자, 특수문자 포함 최소 8자 이상"
                             />
                         </div>
-                        <button type="submit" class="btn bg-dark text-white">
-                            login
+                        <div class="mb-3">
+                            <label for="name" class="form-label">이름</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="name"
+                                name="name"
+                            />
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">이메일</label>
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="email"
+                                name="email"
+                            />
+                        </div>
+                        <button
+                            id="signUpBtn"
+                            type="button"
+                            class="btn bg-dark text-white"
+                        >
+                            가입하기
                         </button>
                     </form>
                 </div>
             </div>
         </div>
+        <script src="../user.js"></script>
     </body>
 </html>
