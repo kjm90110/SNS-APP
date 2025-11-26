@@ -1,5 +1,5 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../db/database.mjs')
+import { DataTypes } from 'sequelize';
+import sequelize from '../db/database.mjs';
 
 const User = sequelize.define(
     'User',

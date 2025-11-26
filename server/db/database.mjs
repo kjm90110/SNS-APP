@@ -4,7 +4,7 @@ import { config } from "../config.mjs";
 const sequelize = new Sequelize(
     config.db.name,
     config.db.user,
-    config.db.passowrd,
+    config.db.password,
     {
         host: config.db.host,
         dialect: "mysql",

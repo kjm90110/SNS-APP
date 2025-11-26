@@ -1,18 +1,24 @@
 import express from "express";
-import userController from '../controller/user.mjs'
+import * as userController from '../controller/user.mjs'
+import { isAuth } from "../middleware/user.mjs";
+import path from 'path'
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const router = express.Router();
 
-router.get("/", isAuth, userController)
+router.post('/signup', userController.signup)
 
-router.get('/:id', isAuth, userController.getPost)
+router.post('/login', userController.login)
 
-router.get("/:useridx", isAuth, userController.searchByUser)
 
-router.post("/", isAuth, userController.create)
+router.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "../../public/user-ui/signup.html"));
+});
 
-router.put("/:id", isAuth, userController.update)
-
-router.delete("/:id", isAuth, userController.remove)
+// 로그인 유지 확인
+router.post("/me", isAuth, userController.me);
 
 export default router;

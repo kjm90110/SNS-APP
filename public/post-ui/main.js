@@ -1,6 +1,6 @@
 const defaultUrl = 'http:/127.0.0.1:3000/';
 
-document.getElementById("registPostBtn").addEventListener("click", () => {
+document.getElementById("showRegistPost").addEventListener("click", () => {
     const modal = new bootstrap.Modal(document.getElementById("postModal"));
     modal.show();
 });
@@ -9,6 +9,16 @@ document.getElementById("registPostBtn").addEventListener("click", () => {
 document.getElementById("registPostBtn").addEventListener("click", () => {
     const title = document.getElementById('title');
     const content = document.getElementById('content');
+
+    const response = fetch(defaultUrl+'post/', {
+        headers: {'Content-Type': 'application/json;charset=utf-8'},
+        body: {
+            title,
+            content
+        }
+    });
+
+    const resJson = response.json();
 
     const res = fetch('')
 });

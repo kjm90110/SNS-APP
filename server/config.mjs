@@ -14,10 +14,10 @@ function required(key, defaultValue = undefined) {
 export const config = {
     jwt: {
         secretKey: required("JWT_SECRET"),
-        expiresInSec: required("JWT_EXPIRES_SEC"),
+        expiresInSec: parseInt(required("JWT_EXPIRES_SEC")),
     },
     bcrypt: {
-        saltRounds: required("BCRYPT_SALT_ROUNDS"),
+        saltRounds: parseInt(required("BCRYPT_SALT_ROUNDS")),
     },
     host: {
         port: required("HOST_PORT"),
@@ -25,7 +25,7 @@ export const config = {
     db: {
         host: required("DB_HOST"),
         user: required("DB_USER"),
-        passowrd: required("DB_PW"),
+        password: required("DB_PW"),
         port: required("DB_PORT"),
         name: required("DB_NAME"),
     },
