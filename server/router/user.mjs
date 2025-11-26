@@ -1,25 +1,18 @@
 import express from "express";
+import userController from '../controller/user.mjs'
 
 const router = express.Router();
 
-router.get("/", (req, res, next) => {
-    return;
-});
+router.get("/", isAuth, userController)
 
-router.get("/:id", (req, res, next) => {
-    return;
-});
+router.get('/:id', isAuth, userController.getPost)
 
-router.post("/", (req, res, next) => {
-    return;
-});
+router.get("/:useridx", isAuth, userController.searchByUser)
 
-router.put("/:id", (req, res, next) => {
-    return;
-});
+router.post("/", isAuth, userController.create)
 
-router.delete("/:id", (req, res, next) => {
-    return;
-});
+router.put("/:id", isAuth, userController.update)
+
+router.delete("/:id", isAuth, userController.remove)
 
 export default router;

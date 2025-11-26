@@ -8,6 +8,34 @@ const pwAuth = /^[\w!@#$%^&*()]{8,}$/;
 const hasKorean = /[ㄱ-ㅎ가-힣]/;
 const emailAuth = /^\S+@\S+\.\S+$/;
 
+// 회원가입
+signUpBtn.addEventListener('click', async () => {
+    const userId = document.getElementById('userId');
+    const password = document.getElementById('password');
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+
+    const url = 'http://127.0.0.1:8080/user/';
+    const payload = {
+        userId,
+        password,
+        name,
+        email
+    }
+
+    const response = await fetch(url, {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json;charset=utr-8'
+        },
+        body: JSON.stringify(payload)
+    });
+
+    const resJson = await response.json();
+    
+
+});
+
 // 로그인 버튼 클릭 이벤트
 loginBtn.addEventListener("click", () => {
     const id = document.getElementById("userId").value;

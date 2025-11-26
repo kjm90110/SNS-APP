@@ -2,6 +2,12 @@ h3 {
     font-size: 20px;
 }
 
+header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15); /* 얇은 라인 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);    /* 부드러운 그림자 */
+}
+
+
 .list-group-item {
     display: flex;
     justify-content: space-between;

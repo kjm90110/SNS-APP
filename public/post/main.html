@@ -40,8 +40,6 @@
             </nav>
         </header>
 
-        <hr />
-
         <!-- Main Content -->
         <div class="container mt-5">
             <div class="row justify-content-center">
@@ -87,7 +85,7 @@
             </div>
         </div>
 
-        <!-- 포스트 등록 모달창 -->
+        <!-- 게시물 등록 모달창 -->
         <div class="modal fade" id="postModal" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -107,6 +105,7 @@
                                 <input
                                     type="text"
                                     class="form-control"
+                                    id="title"
                                     placeholder="제목을 입력하세요"
                                 />
                             </div>
@@ -115,6 +114,7 @@
                                 <textarea
                                     class="form-control"
                                     rows="6"
+                                    id="content"
                                     placeholder="내용을 입력하세요"
                                 ></textarea>
                             </div>
