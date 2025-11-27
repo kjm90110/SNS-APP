@@ -1,9 +1,9 @@
-import { DataTypes } from 'sequelize';
-import sequelize from '../db/database.mjs';
+import { DataTypes } from "sequelize";
+import sequelize from "../db/database.mjs";
 
 // 모델 정의
 const Post = sequelize.define(
-    'Post',
+    "Post",
     {
         id: {
             type: DataTypes.INTEGER,
@@ -28,8 +28,8 @@ const Post = sequelize.define(
         },
     },
     {
-        tableName: 'post',       // 실제 테이블명
-        timestamps: false,       // updatedAt 자동 생성 방지
+        tableName: "post", // 실제 테이블명
+        timestamps: false, // updatedAt 자동 생성 방지
         freezeTableName: true,
     }
 );
@@ -42,7 +42,7 @@ export async function createPost({ title, content, useridx }) {
 // READ ALL
 export async function getAllPosts() {
     return await Post.findAll({
-        order: [['createdAt', 'DESC']],
+        order: [["createdAt", "DESC"]],
     });
 }
 
@@ -55,7 +55,7 @@ export async function getPostById(id) {
 export async function getPostsByUser(useridx) {
     return await Post.findAll({
         where: { useridx },
-        order: [['createdAt', 'DESC']],
+        order: [["createdAt", "DESC"]],
     });
 }
 

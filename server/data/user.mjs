@@ -1,8 +1,10 @@
-import { DataTypes } from 'sequelize';
-import sequelize from '../db/database.mjs';
+import { DataTypes } from "sequelize";
+import sequelize from "../db/database.mjs";
 
+// 직접 쿼리를 짜지 않아도 되는 mysql 라이브러리 sequelize
+// table model 정의
 const User = sequelize.define(
-    'User',
+    "User",
     {
         idx: {
             type: DataTypes.INTEGER,
@@ -11,7 +13,7 @@ const User = sequelize.define(
         },
         userid: {
             type: DataTypes.STRING(50),
-            allowNull: false,
+            allowNull: false, // not null
             unique: true,
         },
         password: {
@@ -28,9 +30,9 @@ const User = sequelize.define(
         },
     },
     {
-        tableName: 'user',        // 실제 테이블 이름
-        timestamps: false,        // createdAt, updatedAt 끄기
-        freezeTableName: true,    // 테이블명 자동 복수화 방지
+        tableName: "user", // 실제 테이블 이름
+        timestamps: false, // createdAt, updatedAt 끄기
+        freezeTableName: true, // 테이블명 자동 복수화 방지
     }
 );
 
